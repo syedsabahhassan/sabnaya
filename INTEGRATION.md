@@ -1,4 +1,4 @@
-# Sabnaya — Integration & Setup Guide
+# SabahLabs — Integration & Setup Guide
 
 > Full-stack real-time multiplayer trivia (Kahoot-style)
 > Stack: Node.js + Socket.IO (backend) · React + Vite (web frontend) · React Native + Expo (mobile)
