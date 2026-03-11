@@ -14,6 +14,7 @@ const path     = require('path');
 
 const gm       = require('./gameManager');
 const repo     = require('./quizRepository');
+const { initSchema } = require('./db');
 const sampleQuizzes = require('./sampleQuiz');
 
 const PORT         = process.env.PORT || 3001;
@@ -24,7 +25,7 @@ const ADMIN_SECRET  = process.env.ADMIN_SECRET || 'trivia-admin-secret'; // simp
 // Express + Socket.IO Setup
 // ─────────────────────────────────────────────
 const app = express();
-app.use(cors({ origin: '*', credentials: true }));
+app.use(cors({ origin: '*' }));
 app.use(express.json({ limit: '10mb' }));
 
 // Serve uploaded images from /uploads
@@ -462,8 +463,10 @@ io.on('connection', (socket) => {
 // ─────────────────────────────────────────────
 // Start
 // ─────────────────────────────────────────────
-httpServer.listen(PORT, () => {
-  console.log(`\n🎮 Sabnaya v2 running on http://localhost:${PORT}`);
-  console.log(`   CORS: ${CLIENT_ORIGIN}`);
-  console.log(`   Admin secret: ${ADMIN_SECRET.substring(0,4)}****`);
+initSchema().then(() => {
+  httpServer.listen(PORT, () => {
+    console.log(`\n🎮 Sabnaya v2 running on http://localhost:${PORT}`);
+    console.log(`   CORS: ${CLIENT_ORIGIN}`);
+    console.log(`   Admin secret: ${ADMIN_SECRET.substring(0,4)}****`);
+  });
 });

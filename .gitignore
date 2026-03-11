@@ -31,3 +31,6 @@ backend/uploads/
 .idea/
 .vercel
 .env*.local
+
+
+package-lock.json

@@ -1,6 +1,6 @@
 # 🎮 Sabnaya — Real-Time Multiplayer Trivia
 
-A Kahoot-style real-time multiplayer trivia platform built with **React + Node.js + Socket.IO**.
+A real-time multiplayer trivia platform built with **React + Node.js + Socket.IO**.
 
 ---
 
