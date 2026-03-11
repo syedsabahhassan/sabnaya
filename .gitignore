@@ -32,5 +32,3 @@ backend/uploads/
 .vercel
 .env*.local
 
-
-package-lock.json
