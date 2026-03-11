@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Environment files (keep .env.example, ignore actual .env)
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+
+# Expo / React Native
+mobile/.expo/
+mobile/android/
+mobile/ios/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads (user content)
+backend/uploads/
+
+# IDE
+.vscode/
+.idea/
