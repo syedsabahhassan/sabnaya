@@ -345,6 +345,13 @@ function HostSetup({ onCreateRoom, onBack, quizzes }) {
   const [selectedQuiz, setSelectedQuiz] = useState(quizzes[0]?.id || '');
   const [teamMode, setTeamMode]         = useState(false);
 
+  // Quizzes load asynchronously — once they arrive, auto-select the first one
+  useEffect(() => {
+    if (quizzes.length > 0 && !selectedQuiz) {
+      setSelectedQuiz(quizzes[0].id);
+    }
+  }, [quizzes]);
+
   return (
     <div className="screen-centered fade-in">
       <div className="card card-wide">

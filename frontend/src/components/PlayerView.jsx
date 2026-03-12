@@ -416,7 +416,8 @@ function PlayerFinalScreen({ playerData, onPlayAgain }) {
   const myRank = finalLeaderboard.findIndex((e) => e.name === playerName) + 1;
   const podium = finalLeaderboard.slice(0, 3);
   const podiumClasses = ['podium-2nd', 'podium-1st', 'podium-3rd'];
-  const podiumEmoji = ['🥈', '🥇', '🥉'];
+  const podiumEmoji = ['🥈', '🥇', '🥉']; // visual podium order: left=2nd, centre=1st, right=3rd
+  const rankEmoji = ['🥇', '🥈', '🥉'];   // rank order: index 0=1st, 1=2nd, 2=3rd
   const ordered = [podium[1], podium[0], podium[2]].filter(Boolean);
 
   return (
@@ -452,7 +453,7 @@ function PlayerFinalScreen({ playerData, onPlayAgain }) {
           <div>
             <div style={{ color: 'var(--text-dim)', fontSize: '0.75rem', fontWeight: 700 }}>RANK</div>
             <div style={{ fontSize: '2.5rem', fontWeight: 900 }}>
-              {myRank <= 3 ? podiumEmoji[myRank - 1] : `#${myRank}`}
+              {myRank <= 3 ? rankEmoji[myRank - 1] : `#${myRank}`}
             </div>
           </div>
           <div>
