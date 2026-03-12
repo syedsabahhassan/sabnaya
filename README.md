@@ -220,7 +220,7 @@ npx expo start         # scan QR code with Expo Go on iPhone
 | Variable | Default | Description |
 |---|---|---|
 | `VITE_SERVER_URL` | `http://localhost:3001` | Backend URL |
-| `VITE_ADMIN_SECRET` | `sabahlabs-admin-secret` | Must match backend `ADMIN_SECRET` |
+| `VITE_ADMIN_SECRET` | `sabnaya-admin-secret` | Must match backend `ADMIN_SECRET` |
 
 ### Mobile
 | Variable | Default | Description |
